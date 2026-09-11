@@ -2,7 +2,7 @@ trigger:
 - main
 
 variables:
-  imageName: demo-app
+  imageName: web
 
 stages:
 - stage: Build
