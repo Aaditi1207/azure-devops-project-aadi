@@ -9,11 +9,11 @@ stages:
   jobs:
   - job: BuildPush
     pool:
-      name: self-hosted-linux
+      name: Default
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'aadiacr'
+        containerRegistry: 'aadidevopsacr'
         repository: $(imageName)
         command: buildAndPush
         Dockerfile: Dockerfile
@@ -24,7 +24,7 @@ stages:
   jobs:
   - job: Deploy
     pool:
-      name: self-hosted-linux
+      name: Default
     steps:
     - task: KubernetesManifest@1
       inputs:
